@@ -20,13 +20,19 @@
         class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100"
       >
         <td>
-          <img :src="`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`" :alt="coin.name" />
+          <img 
+            class="w-6 h-6"
+            :src="`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`" 
+            :alt="coin.name" 
+          />
         </td>
         <td><b>#{{ coin.rank }}</b></td>
         <td>{{ coin.name }}</td>
-        <td>{{ coin.priceUsd }}</td>
-        <td>{{ coin.marketCapUsd }}</td>
-        <td>{{ coin.changePercent24Hr }}</td>
+        <td>{{ coin.priceUsd | dollar }}</td>
+        <td>{{ coin.marketCapUsd | dollar }}</td>
+        <td :class="coin.changePercent24Hr.includes('-') ? 'text-red-600' : 'text-green-600' ">
+          {{ coin.changePercent24Hr | percent }}
+        </td>
         <td class="hidden sm:block"></td>
       </tr>
     </tbody>

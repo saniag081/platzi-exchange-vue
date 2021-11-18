@@ -1,6 +1,6 @@
 <template>
   <main>
-    <px-header />
+    <px-header class="mb-10" />
 
     <router-view class="container px-5 sm:px-20 py-20" />
   </main>
