@@ -85,7 +85,9 @@ export default {
 .down::before {
   content: "👇";
 }
-
+table{
+  margin: auto;
+}
 td {
   padding: 20px 0px;
   font-size: 0.6rem;
